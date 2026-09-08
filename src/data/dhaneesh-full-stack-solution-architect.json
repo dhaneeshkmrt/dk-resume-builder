@@ -1,0 +1,371 @@
+{
+  "id": "dhaneesh-full-stack-solution-architect",
+  "title": "dhaneesh - full stack solution architect",
+  "personalInfo": {
+    "fullName": "Dhaneesh Kumar T",
+    "jobTitle": "Full Stack Solution Architect | Principal Engineer (AI-Enabled & Distributed Systems)",
+    "email": "dhaneeshkmrt@gmail.com",
+    "phone": "+91-81224-74326",
+    "location": "Hyderabad, India",
+    "website": "https://dhaneesh.dev",
+    "linkedin": "https://linkedin.com/in/dhaneeshkmrt",
+    "github": "https://github.com/dhaneeshkmrt",
+    "portfolio": "https://dhaneesh.dev"
+  },
+  "summary": "**Full Stack Solution Architect** and **Principal Engineer** with **12+ years of experience** architecting scalable enterprise applications across **insurance, banking, financial services, and SaaS**. Experienced in **end-to-end solution architecture**, **distributed systems**, **microservices**, **API design**, **frontend platform architecture**, **cloud-native solutions**, **security**, and **technical governance**. Strong hands-on expertise in **Angular**, **Java / Spring Boot**, **AWS**, **Kubernetes**, and **enterprise integration**, with growing specialization in **GenAI**, **RAG**, **LLM applications**, **vector search**, and **agentic AI**.",
+  "experiences": [
+    {
+      "id": "exp-coforge",
+      "company": "Coforge",
+      "role": "Full Stack Architect - Enterprise Insurance Solutions",
+      "location": "Hyderabad, India",
+      "startDate": "2025 Dec",
+      "endDate": "Present",
+      "current": true,
+      "bullets": [
+        "Architected modernization of a **15-year-old JSP-based insurance application** using **Angular**, **Spring Boot**, and **REST APIs**, defining target architecture and engineering standards.",
+        "Designed a configuration-driven **JSON dynamic form architecture** using **Angular Reactive Forms** for controls, validations, dynamic filters, and document-specific configurations.",
+        "Established an **atomic-to-composite Angular component architecture**, enabling reusable form controls and complex workflows with minimal duplication.",
+        "Designed and guided a **12+ Domain-Driven Design (DDD) microservice architecture** for Policy, Vehicle, Claims, Billing, and related insurance capabilities.",
+        "Architected **Spring Boot BFF / API Gateway services** for high-throughput request orchestration, transformation, authentication, authorization, and downstream API integration.",
+        "Implemented server-side document-level authorization using **Okta OAuth 2.0 / OIDC**, **JWT**, and **Spring Security** to prevent client-side permission bypass.",
+        "Architected the **Guidewire integration layer** using dedicated adapters, isolating external-system dependencies from domain business logic.",
+        "Designed **composite API patterns** to consolidate multiple downstream operations into simplified application-level insurance workflows.",
+        "Established **OpenAPI-driven API contracts** for consistent request/response models, validation, and integration across distributed services.",
+        "Designed **cloud-native deployment** using **AWS, S3, CloudFront, Docker, and Kubernetes** for scalable frontend delivery and backend container deployment.",
+        "Improved frontend performance through **Angular lazy loading**, **caching**, and **optimized API interactions**, reducing unnecessary resource loading and requests.",
+        "Established **Datadog observability** across frontend and backend services with end-to-end tracing, error monitoring, metrics, and alerting for production visibility.",
+        "Modernized legacy UI using **Angular Material** and **WCAG 2.1 principles**, improving accessibility, usability, and visual consistency.",
+        "Created **solution designs**, **sequence diagrams**, and **API contracts**, translating evolving business requirements into implementable technical solutions.",
+        "Provided **technical leadership** through architecture decisions, design reviews, code reviews, and reusable engineering patterns across frontend and backend teams.",
+        "Mentored engineers through architecture reviews, design discussions, and code reviews, raising engineering quality and promoting consistent implementation patterns.",
+        "Applied AI-assisted engineering tools (**GitHub Copilot**, **LLM generation**) to accelerate development, refactoring, testing, and technical documentation."
+      ]
+    },
+    {
+      "id": "exp-bnp",
+      "company": "BNP Paribas",
+      "role": "Senior Technical Lead (Frontend Platform) – Corporate Credit",
+      "location": "Bangalore, India",
+      "startDate": "2025 May",
+      "endDate": "2025 Dec",
+      "current": false,
+      "bullets": [
+        "Architected and maintained **MyCreditApp**, a large-scale enterprise application spanning **25+ repositories**; drove governance of a custom **Design System Library** extending **Angular Material**.",
+        "Managed internal **Nx monorepo** and oversaw publishing of shared packages to the organization's **private NPM registry**, mentoring developers across teams.",
+        "Extended **Angular Material** with BNP-specific design components, enabling consistent **UI/UX across 25+ repos** and accelerating feature velocity.",
+        "Created and enhanced reusable components within the design system, adding new features and driving cross-team adoption.",
+        "Led **Angular version migration**, modernizing legacy codebase and reducing long-term technical debt and maintenance risks.",
+        "Founded and led the **Angular Community of Practice (NG BNP)**, driving best practices, architecture standards, and capability building across teams.",
+        "Ensured compliance with **European Accessibility standards (WCAG 2.1 / EAA)** by embedding accessibility requirements into the design system core, reducing regulatory risk and improving usability."
+      ]
+    },
+    {
+      "id": "exp-enact",
+      "company": "Enact Systems",
+      "role": "Engineering Manager - Consumer App",
+      "location": "Bangalore, India",
+      "startDate": "2024 Apr",
+      "endDate": "2025 May",
+      "current": false,
+      "bullets": [
+        "Led and contributed hands-on to the development of a consumer-facing **solar monitoring platform** helping homeowners optimize energy usage and reduce costs, owning team delivery and technical execution.",
+        "Architected an **AWS event-driven solar data pipeline** using **SNS/SQS**, asynchronously ingesting generation data from multiple inverter OEM APIs with varying formats and intervals.",
+        "Designed **resilient asynchronous processing** with retry, failure recovery, and reconciliation workflows, isolating OEM/API failures and enabling safe reprocessing of incomplete data.",
+        "Implemented **idempotent event processing** across **DynamoDB** and **PostgreSQL**, preventing duplicate records during retries and ensuring reliable processing of solar generation and savings calculations.",
+        "Reduced **user onboarding time by ~70% (10–15 mins → 2–5 mins)** by redesigning end-to-end onboarding flows and application architecture.",
+        "Improved application performance by **75%** by optimizing Angular architecture and reducing initial bundle size from **4.12 MB to 970 KB**, significantly improving load times and UX.",
+        "Led modernization of the frontend platform by migrating from **Angular 10 to Angular 15**, improving maintainability, security posture, and long-term scalability.",
+        "Enabled faster enterprise client onboarding by architecting **white-label and theming capabilities**, reducing customization effort and accelerating go-to-market timelines.",
+        "Standardized frontend architecture through **reusable, configurable components** and modular design, improving development velocity and reducing future maintenance cost.",
+        "Improved platform stability and predictability by implementing **NgRx-based state management** and end-to-end testing with **Playwright**, reducing production defects.",
+        "Strengthened delivery reliability by introducing **CI/CD pipelines on AWS** and enforcing architecture standards through design reviews, code reviews, and technical governance."
+      ]
+    },
+    {
+      "id": "exp-epam",
+      "company": "EPAM Systems",
+      "role": "Senior Software Engineer (Angular) - Cloud Learning",
+      "location": "Hyderabad, India",
+      "startDate": "2020 Feb",
+      "endDate": "2022 Apr",
+      "current": false,
+      "bullets": [
+        "Designed and developed interactive web pages for **Google Cloud Learning** platform using **Angular 9**, **React**, **Redux**, **NgRx**, **NestJS**, and **TypeScript**.",
+        "Developed Material UI with **Angular Dart** components and created Dart services to fetch data from backend microservices.",
+        "Performed unit testing using **Catalyst with 100% unit test code coverage** for Google production environment.",
+        "Coordinated with Interface Design Architects to meet **accessibility standards (WCAG)** at code level.",
+        "Implemented **Google Analytics** tracking for the cloud learning platform.",
+        "Integrated **gRPC-based API** course filter functionality based on various tags like location, date, and partner criteria."
+      ]
+    },
+    {
+      "id": "exp-hrblock",
+      "company": "H & R Block",
+      "role": "Senior Software Engineer - BlockWorks Online",
+      "location": "Trivandrum, India",
+      "startDate": "2017 Dec",
+      "endDate": "2020 Feb",
+      "current": false,
+      "bullets": [
+        "Modernized H&R Block's Assisted Tax Preparation platform to **BlockWorks Online**, transitioning legacy monolithic systems to a **cloud-native omnichannel** application using **Angular**, **RxJS**, and **Micro Frontends**.",
+        "Created reusable **TypeScript** components and services to consume REST APIs adhering to modular architecture.",
+        "Created desktop application using **Electron JS** and integrated with the Angular frontend platform.",
+        "Migrated application developed in **Angular 4.0 to Angular 5.0** and established automated testing with **Jasmine and Karma**.",
+        "Extensively engineered advanced CSS styling architecture, pseudo-elements, classes, and responsive layouts."
+      ]
+    },
+    {
+      "id": "exp-flytxt",
+      "company": "Flytxt Mobile Solutions",
+      "role": "Software Engineer - NEON-dX",
+      "location": "Trivandrum, India",
+      "startDate": "2017 Jul",
+      "endDate": "2017 Dec",
+      "current": false,
+      "bullets": [
+        "Developed responsive frontend components using **Polymer JS** and **Custom Elements** for **NEON-dX**, a B2C Customer Value Management (**CVM**) marketing automation platform enabling CLTV workflows.",
+        "Identified and fixed critical UI rendering and cross-browser integration bottlenecks."
+      ]
+    },
+    {
+      "id": "exp-finastra",
+      "company": "Finastra (D+H Financial Technologies)",
+      "role": "Support Engineer - Cavion Online Banking",
+      "location": "Trivandrum, India",
+      "startDate": "2016 Jan",
+      "endDate": "2017 Dec",
+      "current": false,
+      "bullets": [
+        "Maintained and supported **Cavion Internet Banking** digital banking solution for financial institutions, providing online banking, bill payments, and mobile banking with **Java**, **HTML/CSS**, **Bootstrap**, **JavaScript**, **PHP**, and **MySQL**."
+      ]
+    },
+    {
+      "id": "exp-freelance",
+      "company": "Freelance Developer",
+      "role": "Web Developer",
+      "location": "Remote / India",
+      "startDate": "2014 Jun",
+      "endDate": "2016 Jan",
+      "current": false,
+      "bullets": [
+        "Delivered 100+ responsive web projects converting Photoshop designs into responsive **HTML5/CSS3** websites with **Bootstrap**, **JavaScript**, and custom **WordPress** themes and plugins."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu-mca",
+      "institution": "Anna University",
+      "degree": "Master of Computer Application (MCA)",
+      "fieldOfStudy": "Computer Applications",
+      "location": "Chennai / Tamil Nadu, India",
+      "startDate": "2011-07",
+      "endDate": "2014-06",
+      "current": false
+    },
+    {
+      "id": "edu-bsc",
+      "institution": "Manonmaniam Sundaranar University",
+      "degree": "Bachelor of Science (B.Sc)",
+      "fieldOfStudy": "Computer Science",
+      "location": "Tirunelveli / Tamil Nadu, India",
+      "startDate": "2007-07",
+      "endDate": "2010-06",
+      "current": false
+    }
+  ],
+  "skillCategories": [
+    {
+      "id": "skill-cat-arch",
+      "categoryName": "Architecture & Leadership",
+      "skills": [
+        "Solution Architecture",
+        "Software Architecture",
+        "System Design",
+        "Distributed Systems",
+        "Domain-Driven Design (DDD)",
+        "Technical Strategy",
+        "Technical Governance",
+        "Engineering Standards",
+        "Design Patterns",
+        "Scalability",
+        "Reliability",
+        "Resilience",
+        "Performance Engineering"
+      ]
+    },
+    {
+      "id": "skill-cat-frontend",
+      "categoryName": "Frontend Architecture",
+      "skills": [
+        "Angular",
+        "TypeScript",
+        "JavaScript",
+        "RxJS",
+        "NgRx",
+        "React",
+        "Next.js",
+        "Angular Material",
+        "Design Systems",
+        "Nx Monorepo",
+        "Micro Frontends",
+        "Module Federation",
+        "HTML5",
+        "CSS3",
+        "SCSS",
+        "Web Performance",
+        "WCAG 2.1",
+        "EAA"
+      ]
+    },
+    {
+      "id": "skill-cat-backend",
+      "categoryName": "Backend & APIs",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "WebFlux",
+        "Microservices",
+        "REST APIs",
+        "API Gateway",
+        "BFF",
+        "OpenAPI",
+        "Node.js",
+        "NestJS",
+        "Express.js",
+        "FastAPI",
+        "API Integration"
+      ]
+    },
+    {
+      "id": "skill-cat-data",
+      "categoryName": "Distributed & Data",
+      "skills": [
+        "Kafka",
+        "Event-Driven Architecture",
+        "Redis",
+        "Caching",
+        "PostgreSQL",
+        "SQL",
+        "MongoDB",
+        "Vector Search",
+        "Semantic Search"
+      ]
+    },
+    {
+      "id": "skill-cat-cloud",
+      "categoryName": "Cloud & DevOps",
+      "skills": [
+        "AWS",
+        "GCP",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "Infrastructure as Code (IaC)",
+        "CI/CD",
+        "Git",
+        "GitHub",
+        "Observability",
+        "Datadog"
+      ]
+    },
+    {
+      "id": "skill-cat-security",
+      "categoryName": "Security",
+      "skills": [
+        "OAuth 2.0",
+        "OpenID Connect",
+        "JWT",
+        "Okta",
+        "Authentication",
+        "Authorization",
+        "Secure API Design"
+      ]
+    },
+    {
+      "id": "skill-cat-ai",
+      "categoryName": "GenAI & AI Engineering",
+      "skills": [
+        "Generative AI",
+        "LLM Applications",
+        "RAG",
+        "Agentic AI",
+        "LangGraph",
+        "Vector Embeddings",
+        "LLM Integration",
+        "Document Parsing",
+        "Semantic Search",
+        "Ollama",
+        "AI-Assisted Development",
+        "Claude Code",
+        "GitHub Copilot",
+        "Gemini Code Assist"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-insurance",
+      "name": "Enterprise Insurance Modernization Platform",
+      "role": "Full Stack Solution Architect",
+      "technologies": ["Angular", "Spring Boot", "Microservices", "Guidewire", "AWS", "Kubernetes", "Datadog"],
+      "bullets": [
+        "Architected end-to-end modernization of 15-year-old insurance platform with 12+ DDD microservices, dynamic JSON forms, and cloud-native deployment."
+      ],
+      "startDate": "2025 Dec",
+      "endDate": "Present"
+    },
+    {
+      "id": "proj-mycredit",
+      "name": "MyCreditApp & Enterprise Design System",
+      "role": "Senior Technical Lead (Frontend Platform)",
+      "technologies": ["Angular", "TypeScript", "Nx Monorepo", "Module Federation", "Angular Material"],
+      "bullets": [
+        "Architected custom enterprise design system library and managed internal Nx monorepo adopted across 25+ corporate credit repositories at BNP Paribas."
+      ],
+      "startDate": "2025 May",
+      "endDate": "2025 Dec"
+    },
+    {
+      "id": "proj-solar",
+      "name": "Consumer Solar Telemetry & Monitoring Platform",
+      "role": "Engineering Manager",
+      "technologies": ["Angular 15", "NestJS", "AWS SNS/SQS", "DynamoDB", "PostgreSQL", "Playwright"],
+      "bullets": [
+        "Architected event-driven AWS solar data pipeline, cut user onboarding time by ~70% (10-15m -> 2-5m), and optimized initial bundle size by 75% (4.12 MB to 970 KB)."
+      ],
+      "startDate": "2024 Apr",
+      "endDate": "2025 May"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-guidewire",
+      "name": "Guidewire Policy Lifecycle Integration",
+      "issuer": "Guidewire",
+      "issueDate": "2025"
+    },
+    {
+      "id": "cert-wcag",
+      "name": "Accessibility Specialist (WCAG 2.1 / EAA Compliance)",
+      "issuer": "W3C / Enterprise Standards",
+      "issueDate": "2024"
+    }
+  ],
+  "awards": [],
+  "customSections": [],
+  "sectionOrder": ["summary", "experience", "skills", "projects", "education", "certifications"],
+  "settings": {
+    "template": "modern",
+    "fontFamily": "Inter",
+    "fontSize": 10,
+    "lineSpacing": "normal",
+    "primaryColor": "#186750",
+    "pageSize": "A4",
+    "showSectionIcons": true,
+    "twoColumnLayout": false,
+    "contactHeaderStyle": "bullets"
+  }
+}

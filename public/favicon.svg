@@ -1,0 +1,23 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dkFavBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#064e3b" />
+      <stop offset="100%" stopColor="#047857" />
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="8" fill="url(#dkFavBg)" />
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" stroke="#34d399" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Monogram D -->
+  <path
+    d="M7 8V24H13.5C17 24 19.5 21.5 19.5 16C19.5 10.5 17 8 13.5 8H7ZM10.5 11.5H13C15 11.5 16.2 13 16.2 16C16.2 19 15 20.5 13 20.5H10.5V11.5Z"
+    fill="#FFFFFF"
+  />
+
+  <!-- Monogram K -->
+  <path
+    d="M19.5 8V24H22.5V17L26 24H29.5L24.8 15.5L29 8H25.5L22.5 13.8V8H19.5Z"
+    fill="#34D399"
+  />
+</svg>

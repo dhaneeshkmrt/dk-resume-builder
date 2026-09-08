@@ -1,0 +1,97 @@
+import React from 'react';
+
+interface DkLogoProps {
+  className?: string;
+  size?: number;
+  showText?: boolean;
+}
+
+export const DkLogo: React.FC<DkLogoProps> = ({
+  className = 'w-8 h-8',
+  size = 32,
+  showText = false,
+}) => {
+  return (
+    <div className={`inline-flex items-center gap-2.5 ${showText ? '' : ''}`}>
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`${className} flex-shrink-0 transition-transform hover:scale-105 duration-200`}
+        aria-label="DK Resume Builder Logo"
+      >
+        <defs>
+          <linearGradient id="dkBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#064e3b" />
+            <stop offset="50%" stopColor="#065f46" />
+            <stop offset="100%" stopColor="#047857" />
+          </linearGradient>
+          <linearGradient id="dkAccentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#34d399" />
+            <stop offset="100%" stopColor="#10b981" />
+          </linearGradient>
+          <filter id="dkShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.25" />
+          </filter>
+        </defs>
+
+        {/* Squircle Badge Base */}
+        <rect
+          x="2"
+          y="2"
+          width="60"
+          height="60"
+          rx="15"
+          fill="url(#dkBgGrad)"
+          stroke="#10b981"
+          strokeOpacity="0.4"
+          strokeWidth="1.5"
+        />
+
+        {/* Minimal Document / Code Editor Blueprint in Background */}
+        <path
+          d="M17 14H37L47 24V50H17V14Z"
+          fill="white"
+          fillOpacity="0.07"
+          stroke="white"
+          strokeOpacity="0.14"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M37 14V24H47"
+          fill="none"
+          stroke="white"
+          strokeOpacity="0.18"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+
+        {/* Bold Modern "D" Monogram */}
+        <path
+          d="M20 23V43H28.5C33.5 43 36.5 40 36.5 33C36.5 26 33.5 23 28.5 23H20ZM24.5 27.5H28C31 27.5 32.5 29.5 32.5 33C32.5 36.5 31 38.5 28 38.5H24.5V27.5Z"
+          fill="#FFFFFF"
+          filter="url(#dkShadow)"
+        />
+
+        {/* Bold Modern "K" Monogram */}
+        <path
+          d="M39 23V43H43.2V34.5L48.2 43H53.5L46.8 32.5L52.8 23H47.8L43.2 30.5V23H39Z"
+          fill="#FFFFFF"
+          filter="url(#dkShadow)"
+        />
+
+        {/* Active Developer Accent Dot / Terminal Node */}
+        <circle cx="49" cy="17" r="3" fill="url(#dkAccentGrad)" />
+      </svg>
+
+      {showText && (
+        <span className="font-extrabold text-neutral-900 tracking-tight text-base">
+          DK <span className="text-emerald-700 font-bold">Resume</span>
+        </span>
+      )}
+    </div>
+  );
+};

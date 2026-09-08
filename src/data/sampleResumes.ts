@@ -103,36 +103,6 @@ export const DEFAULT_RESUME: ResumeData = {
       separator: 'comma'
     }
   ],
-  projects: [
-    {
-      id: 'proj-offline-tasker',
-      name: 'OpenMetrics: Developer Analytics Engine',
-      role: 'Creator & Lead Maintainer',
-      url: 'https://openmetrics-demo.example.com',
-      githubUrl: 'https://github.com/alexmorgandev/openmetrics',
-      technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL'],
-      bullets: [
-        'Built an open-source engineering metrics dashboard with **1,500+ GitHub stars** used by 200+ developer teams.',
-        'Designed lightweight local-storage first caching engine with instant zero-latency visual rendering.'
-      ],
-      startDate: '2023 Jan',
-      endDate: '2023 Dec'
-    }
-  ],
-  certifications: [
-    {
-      id: 'cert-aws-saa',
-      name: 'AWS Certified Solutions Architect – Associate',
-      issuer: 'Amazon Web Services',
-      issueDate: '2023',
-    },
-    {
-      id: 'cert-k8s',
-      name: 'Certified Kubernetes Application Developer (CKAD)',
-      issuer: 'Cloud Native Computing Foundation (CNCF)',
-      issueDate: '2022',
-    }
-  ],
   awards: [
     {
       id: 'award-hackathon',
@@ -143,7 +113,7 @@ export const DEFAULT_RESUME: ResumeData = {
     }
   ],
   customSections: [],
-  sectionOrder: ['summary', 'experience', 'skills', 'projects', 'education', 'certifications'],
+  sectionOrder: ['summary', 'experience', 'skills', 'education'],
   settings: {
     template: 'modern',
     fontFamily: 'Inter',
@@ -234,28 +204,9 @@ export const BACKEND_ARCHITECT_RESUME: ResumeData = {
       separator: 'comma'
     }
   ],
-  projects: [
-    {
-      id: 'proj-grpc-proxy',
-      name: 'High-Throughput gRPC Proxy Engine',
-      technologies: ['Go', 'Docker', 'Kubernetes'],
-      bullets: [
-        'Published lightweight reverse proxy benchmarking 100k+ concurrent requests with zero packet drop.'
-      ],
-      githubUrl: 'https://github.com/jordanleedev/grpc-proxy'
-    }
-  ],
-  certifications: [
-    {
-      id: 'cert-aws-pro',
-      name: 'AWS Certified Solutions Architect – Professional',
-      issuer: 'Amazon Web Services',
-      issueDate: '2023'
-    }
-  ],
   awards: [],
   customSections: [],
-  sectionOrder: ['summary', 'experience', 'skills', 'education', 'certifications', 'projects'],
+  sectionOrder: ['summary', 'experience', 'skills', 'education'],
   settings: {
     template: 'twocolumn',
     fontFamily: 'Roboto',
@@ -327,8 +278,6 @@ export const FRONTEND_ENGINEER_RESUME: ResumeData = {
       separator: 'comma'
     }
   ],
-  projects: [],
-  certifications: [],
   awards: [],
   customSections: [],
   sectionOrder: ['summary', 'experience', 'skills', 'education'],

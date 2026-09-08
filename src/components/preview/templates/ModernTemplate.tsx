@@ -2,7 +2,7 @@ import React from 'react';
 import { TemplateProps, getFontFamilyClass, getContactItems, BulletList, renderFormattedText } from './templateUtils';
 
 export const ModernTemplate: React.FC<TemplateProps> = ({ resume, isPrint }) => {
-  const { personalInfo, summary, experiences, education, skillCategories, projects, certifications, awards, settings } = resume;
+  const { personalInfo, summary, experiences, education, skillCategories, awards, settings } = resume;
   const fontClass = getFontFamilyClass(settings.fontFamily);
   const primaryColor = settings.primaryColor || '#186750';
   const contactItems = getContactItems(personalInfo);
@@ -130,52 +130,6 @@ export const ModernTemplate: React.FC<TemplateProps> = ({ resume, isPrint }) => 
                   <span className="text-slate-500 font-medium">{edu.startDate} – {edu.current ? 'Present' : edu.endDate}</span>
                   {edu.gpa && <div className="text-slate-600 font-semibold">GPA: {edu.gpa}</div>}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Projects */}
-      {projects && projects.length > 0 && (
-        <section className="mb-5 resume-section">
-          <h2 className="text-xs font-bold uppercase tracking-wider mb-3 border-b pb-3 resume-section-title" style={{ borderColor: `${primaryColor}30`, color: primaryColor }}>
-            Key Projects
-          </h2>
-          <div className="space-y-3">
-            {projects.map((proj, projIdx) => (
-              <div key={proj.id} className="resume-entry">
-                <div className="flex justify-between items-baseline">
-                  <span className="font-bold text-slate-900 text-xs">{proj.name}</span>
-                  {proj.startDate && (
-                    <span className="text-[11px] text-slate-500 font-medium">
-                      {proj.startDate} {proj.endDate ? `– ${proj.endDate}` : ''}
-                    </span>
-                  )}
-                </div>
-                {proj.technologies && proj.technologies.length > 0 && (
-                  <div className="text-[10px] text-slate-500 font-mono mb-1">
-                    {proj.technologies.join(', ')}
-                  </div>
-                )}
-                <BulletList bullets={proj.bullets} fieldPathPrefix={`projects.${projIdx}.bullets`} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {/* Certifications */}
-      {certifications && certifications.length > 0 && (
-        <section className="mb-5 resume-section">
-          <h2 className="text-xs font-bold uppercase tracking-wider mb-2 border-b pb-3 resume-section-title" style={{ borderColor: `${primaryColor}30`, color: primaryColor }}>
-            Certifications
-          </h2>
-          <div className="space-y-1.5 text-xs">
-            {certifications.map(cert => (
-              <div key={cert.id} className="flex justify-between items-baseline resume-standalone-item">
-                <span className="font-semibold text-slate-800">{cert.name}</span>
-                <span className="text-slate-500">{cert.issuer ? `${cert.issuer} • ` : ''}{cert.issueDate}</span>
               </div>
             ))}
           </div>

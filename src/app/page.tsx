@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ResumeData, TemplateId, FontFamily } from '@/types/resume';
 import { DEFAULT_RESUME } from '@/data/sampleResumes';
-import { calculateAtsAudit } from '@/utils/atsScorer';
 import {
   loadAllSavedResumes,
   saveResumeToCollection,
@@ -17,8 +16,6 @@ import {
 import { Navbar } from '@/components/layout/Navbar';
 import { FormEditor } from '@/components/editor/FormEditor';
 import { ResumePreview } from '@/components/preview/ResumePreview';
-import { AtsAuditModal } from '@/components/ats/AtsAuditModal';
-import { JobDescriptionMatcher } from '@/components/ats/JobDescriptionMatcher';
 import { ImportModal } from '@/components/modals/ImportModal';
 import { ExportModal } from '@/components/modals/ExportModal';
 import { TemplatesModal } from '@/components/modals/TemplatesModal';
@@ -34,8 +31,6 @@ export default function ResumeBuilderPage() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Modals state
-  const [isAtsModalOpen, setIsAtsModalOpen] = useState(false);
-  const [isJdModalOpen, setIsJdModalOpen] = useState(false);
   const [isImportModalOpen, setIsImportModalOpen] = useState(false);
   const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [isTemplatesModalOpen, setIsTemplatesModalOpen] = useState(false);
@@ -154,19 +149,14 @@ export default function ResumeBuilderPage() {
     window.addEventListener('pointerup', onPointerUp);
   };
 
-  const audit = calculateAtsAudit(resume, resume.targetJobDescription);
-
   return (
     <div className="h-screen max-h-screen flex flex-col overflow-hidden bg-[#FAF8F2]">
       {/* Top DK Navbar */}
       <div className="flex-shrink-0 z-30">
         <Navbar
-          atsScore={audit.overallScore}
           currentResumeTitle={resume.title || resume.personalInfo.fullName}
           savedResumesCount={savedResumes.length}
           onOpenSavedResumesModal={() => setIsSavedResumesModalOpen(true)}
-          onOpenAtsAudit={() => setIsAtsModalOpen(true)}
-          onOpenJdMatcher={() => setIsJdModalOpen(true)}
           onOpenImportModal={() => setIsImportModalOpen(true)}
           onOpenExportModal={() => setIsExportModalOpen(true)}
           onOpenTemplatesModal={() => setIsTemplatesModalOpen(true)}
@@ -188,8 +178,6 @@ export default function ResumeBuilderPage() {
           <FormEditor
             resume={resume}
             onChange={setResume}
-            onOpenJdMatcher={() => setIsJdModalOpen(true)}
-            onOpenAtsScore={() => setIsAtsModalOpen(true)}
           />
         </section>
 
@@ -237,23 +225,6 @@ export default function ResumeBuilderPage() {
       </main>
 
       {/* Modals */}
-      <AtsAuditModal
-        isOpen={isAtsModalOpen}
-        onClose={() => setIsAtsModalOpen(false)}
-        resume={resume}
-        onOpenJdMatcher={() => {
-          setIsAtsModalOpen(false);
-          setIsJdModalOpen(true);
-        }}
-      />
-
-      <JobDescriptionMatcher
-        isOpen={isJdModalOpen}
-        onClose={() => setIsJdModalOpen(false)}
-        resume={resume}
-        onUpdateResume={setResume}
-      />
-
       <ImportModal
         isOpen={isImportModalOpen}
         onClose={() => setIsImportModalOpen(false)}

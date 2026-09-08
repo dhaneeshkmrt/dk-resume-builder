@@ -142,16 +142,6 @@ export const ImportModal: React.FC<Props> = ({ isOpen, onClose, onImportResume }
           skills: ['Microservices', 'REST APIs', 'GraphQL', 'CI/CD', 'Git', 'System Design'],
         },
       ],
-      projects: [
-        {
-          name: 'Developer Metrics Dashboard',
-          technologies: ['React', 'TypeScript', 'Tailwind CSS', 'FastAPI'],
-          bullets: [
-            'Built an open-source productivity dashboard with 2,000+ GitHub stars.',
-          ],
-          githubUrl: 'https://github.com/alexmorgan/dev-metrics',
-        },
-      ],
     };
 
     setJsonText(JSON.stringify(sample, null, 2));

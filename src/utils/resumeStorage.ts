@@ -64,22 +64,21 @@ export function loadAllSavedResumes(): ResumeData[] {
               modified = true;
             }
           });
-          r.projects?.forEach(p => {
-            if (p.startDate) {
-              const newStart = formatMonthYear(p.startDate);
-              if (newStart !== p.startDate) {
-                p.startDate = newStart;
-                modified = true;
-              }
+          if (Array.isArray(r.sectionOrder)) {
+            const cleanOrder = r.sectionOrder.filter(s => s !== 'projects' && s !== 'certifications');
+            if (cleanOrder.length !== r.sectionOrder.length) {
+              r.sectionOrder = cleanOrder;
+              modified = true;
             }
-            if (p.endDate) {
-              const newEnd = formatMonthYear(p.endDate);
-              if (newEnd !== p.endDate) {
-                p.endDate = newEnd;
-                modified = true;
-              }
-            }
-          });
+          }
+          if (r.projects !== undefined) {
+            delete r.projects;
+            modified = true;
+          }
+          if (r.certifications !== undefined) {
+            delete r.certifications;
+            modified = true;
+          }
           if (r.settings && r.settings.template !== 'modern' && r.settings.template !== 'twocolumn') {
             r.settings.template = 'modern';
             modified = true;

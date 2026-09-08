@@ -6,28 +6,23 @@ import { PersonalInfoForm } from './PersonalInfoForm';
 import { SummaryForm } from './SummaryForm';
 import { ExperienceForm } from './ExperienceForm';
 import { SkillsForm } from './SkillsForm';
-import { EducationForm, ProjectsForm } from './EducationProjectsForm';
+import { EducationForm } from './EducationProjectsForm';
 import {
   User,
   FileText,
   Briefcase,
   Wrench,
-  GraduationCap,
-  FolderGit2,
-  Sparkles,
-  Target
+  GraduationCap
 } from 'lucide-react';
 
 interface Props {
   resume: ResumeData;
   onChange: (resume: ResumeData) => void;
-  onOpenJdMatcher: () => void;
-  onOpenAtsScore: () => void;
 }
 
-type TabType = 'contact' | 'summary' | 'experience' | 'skills' | 'education' | 'projects';
+type TabType = 'contact' | 'summary' | 'experience' | 'skills' | 'education';
 
-export const FormEditor: React.FC<Props> = ({ resume, onChange, onOpenJdMatcher, onOpenAtsScore }) => {
+export const FormEditor: React.FC<Props> = ({ resume, onChange }) => {
   const [activeTab, setActiveTab] = useState<TabType>('contact');
 
   const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
@@ -36,7 +31,6 @@ export const FormEditor: React.FC<Props> = ({ resume, onChange, onOpenJdMatcher,
     { id: 'experience', label: 'Experience', icon: <Briefcase className="w-4 h-4" /> },
     { id: 'skills', label: 'Skills', icon: <Wrench className="w-4 h-4" /> },
     { id: 'education', label: 'Education', icon: <GraduationCap className="w-4 h-4" /> },
-    { id: 'projects', label: 'Projects', icon: <FolderGit2 className="w-4 h-4" /> },
   ];
 
   return (
@@ -133,19 +127,6 @@ export const FormEditor: React.FC<Props> = ({ resume, onChange, onOpenJdMatcher,
             <EducationForm
               education={resume.education}
               onChange={education => onChange({ ...resume, education })}
-            />
-          </div>
-        )}
-
-        {activeTab === 'projects' && (
-          <div>
-            <div className="mb-4">
-              <h2 className="text-base font-bold text-neutral-900">Projects & Key Work</h2>
-              <p className="text-xs text-neutral-500">Side projects, open source, and portfolio highlights.</p>
-            </div>
-            <ProjectsForm
-              projects={resume.projects}
-              onChange={projects => onChange({ ...resume, projects })}
             />
           </div>
         )}

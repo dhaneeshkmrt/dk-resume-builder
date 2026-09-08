@@ -2,8 +2,6 @@
 
 import React from 'react';
 import {
-  ShieldCheck,
-  Target,
   Download,
   FileCode,
   Layout,
@@ -12,24 +10,18 @@ import {
 import { DkLogo } from '@/components/common/DkLogo';
 
 interface Props {
-  atsScore: number;
   currentResumeTitle?: string;
   savedResumesCount?: number;
   onOpenSavedResumesModal?: () => void;
-  onOpenAtsAudit: () => void;
-  onOpenJdMatcher: () => void;
   onOpenImportModal: () => void;
   onOpenExportModal: () => void;
   onOpenTemplatesModal: () => void;
 }
 
 export const Navbar: React.FC<Props> = ({
-  atsScore,
   currentResumeTitle,
   savedResumesCount = 1,
   onOpenSavedResumesModal,
-  onOpenAtsAudit,
-  onOpenJdMatcher,
   onOpenImportModal,
   onOpenExportModal,
   onOpenTemplatesModal,
@@ -53,36 +45,6 @@ export const Navbar: React.FC<Props> = ({
               </span>
             </div>
           </a>
-        </div>
-
-        {/* Center: Live ATS Audit Pill & JD Matcher */}
-        <div className="flex items-center gap-2">
-          {/* Live ATS Score button */}
-          <button
-            onClick={onOpenAtsAudit}
-            className="flex items-center gap-2 px-3 py-1.5 bg-white hover:bg-emerald-50/70 border border-neutral-200 hover:border-emerald-300 rounded-full text-xs font-semibold text-neutral-800 transition shadow-sm"
-          >
-            <ShieldCheck className="w-4 h-4 text-emerald-700" />
-            <span>ATS Score:</span>
-            <span className={`px-2 py-0.5 rounded-full font-bold text-[11px] ${
-              atsScore >= 80
-                ? 'bg-emerald-100 text-emerald-800'
-                : atsScore >= 60
-                ? 'bg-amber-100 text-amber-800'
-                : 'bg-rose-100 text-rose-800'
-            }`}>
-              {atsScore}/100
-            </span>
-          </button>
-
-          {/* Target JD Matcher */}
-          <button
-            onClick={onOpenJdMatcher}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-neutral-50 border border-neutral-200 rounded-full text-xs font-semibold text-neutral-700 transition shadow-sm"
-          >
-            <Target className="w-3.5 h-3.5 text-neutral-500" />
-            <span>Target JD Matcher</span>
-          </button>
         </div>
 
         {/* Right: Actions (My Resumes, Import, Templates, Export) */}

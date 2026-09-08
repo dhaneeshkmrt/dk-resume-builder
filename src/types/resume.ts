@@ -124,38 +124,10 @@ export interface ResumeData {
   experiences: ExperienceItem[];
   education: EducationItem[];
   skillCategories: SkillCategory[];
-  projects: ProjectItem[];
-  certifications: CertificationItem[];
+  projects?: ProjectItem[];
+  certifications?: CertificationItem[];
   awards: AwardItem[];
   customSections: CustomSection[];
   sectionOrder: string[];
   settings: ResumeSettings;
-  targetJobDescription?: string;
-}
-
-export interface AtsAuditResult {
-  overallScore: number;
-  breakdown: {
-    formatting: number; // 0-100
-    impactMetrics: number; // 0-100
-    actionVerbs: number; // 0-100
-    keywords: number; // 0-100
-    completeness: number; // 0-100
-  };
-  metricsFoundCount: number;
-  actionVerbsCount: number;
-  totalWordCount: number;
-  readingTimeMinutes: number;
-  pageEstimate: number;
-  issues: {
-    type: 'critical' | 'warning' | 'info' | 'success';
-    message: string;
-    section?: string;
-    suggestion?: string;
-  }[];
-  jdMatch?: {
-    matchRate: number;
-    foundKeywords: string[];
-    missingKeywords: string[];
-  };
 }

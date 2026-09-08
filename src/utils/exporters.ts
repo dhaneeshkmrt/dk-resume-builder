@@ -176,19 +176,6 @@ export function exportToPlainText(resume: ResumeData): string {
     lines.push('');
   }
 
-  // Projects
-  if (resume.projects.length > 0) {
-    lines.push('PROJECTS');
-    resume.projects.forEach(proj => {
-      const tech = proj.technologies.length > 0 ? ` (Tech: ${proj.technologies.join(', ')})` : '';
-      lines.push(`${proj.name}${tech}`);
-      proj.bullets.forEach(b => {
-        if (b.trim()) lines.push(`  * ${b.trim()}`);
-      });
-      lines.push('');
-    });
-  }
-
   // Education
   if (resume.education.length > 0) {
     lines.push('EDUCATION');
@@ -199,15 +186,6 @@ export function exportToPlainText(resume: ResumeData): string {
       if (edu.honors) lines.push(`  Honors: ${edu.honors}`);
       lines.push('');
     });
-  }
-
-  // Certifications
-  if (resume.certifications.length > 0) {
-    lines.push('CERTIFICATIONS');
-    resume.certifications.forEach(c => {
-      lines.push(`  * ${c.name} - ${c.issuer} (${c.issueDate})`);
-    });
-    lines.push('');
   }
 
   return lines.join('\n');
@@ -261,18 +239,6 @@ export function exportToMarkdown(resume: ResumeData): string {
     md.push('');
   }
 
-  if (resume.projects.length > 0) {
-    md.push('## Projects');
-    resume.projects.forEach(p => {
-      const stack = p.technologies.length > 0 ? ` (${p.technologies.join(', ')})` : '';
-      md.push(`### ${p.name}${stack}`);
-      p.bullets.forEach(b => {
-        if (b.trim()) md.push(`- ${b.trim()}`);
-      });
-      md.push('');
-    });
-  }
-
   if (resume.education.length > 0) {
     md.push('## Education');
     resume.education.forEach(e => {
@@ -283,14 +249,6 @@ export function exportToMarkdown(resume: ResumeData): string {
       if (e.honors) md.push(`- Honors: ${e.honors}`);
       md.push('');
     });
-  }
-
-  if (resume.certifications.length > 0) {
-    md.push('## Certifications');
-    resume.certifications.forEach(c => {
-      md.push(`- **${c.name}** – ${c.issuer} (${c.issueDate})`);
-    });
-    md.push('');
   }
 
   return md.join('\n');
@@ -339,19 +297,6 @@ export function exportToJsonResume(resume: ResumeData): string {
     skills: resume.skillCategories.map(cat => ({
       name: cat.categoryName,
       keywords: cat.skills
-    })),
-    projects: resume.projects.map(proj => ({
-      name: proj.name,
-      description: proj.bullets.join(' '),
-      highlights: proj.bullets,
-      keywords: proj.technologies,
-      url: proj.url
-    })),
-    certificates: resume.certifications.map(c => ({
-      name: c.name,
-      issuer: c.issuer,
-      date: c.issueDate,
-      url: c.url
     }))
   };
 

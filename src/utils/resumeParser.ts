@@ -1,4 +1,4 @@
-import { ResumeData, ExperienceItem, EducationItem, SkillCategory, ProjectItem, CertificationItem, AwardItem } from '@/types/resume';
+import { ResumeData, ExperienceItem, EducationItem, SkillCategory, AwardItem } from '@/types/resume';
 import { DEFAULT_RESUME } from '@/data/sampleResumes';
 
 /**
@@ -60,24 +60,6 @@ JSON Schema:
     {
       "categoryName": "Architecture & Practices",
       "skills": ["Microservices", "REST APIs", "System Design", "CI/CD"]
-    }
-  ],
-  "projects": [
-    {
-      "name": "Project Name",
-      "technologies": ["React", "TypeScript", "Tailwind CSS"],
-      "bullets": [
-        "Architected an offline-first web application with high performance and 100% data privacy."
-      ],
-      "githubUrl": "https://github.com/username/project",
-      "url": "https://project-demo.com"
-    }
-  ],
-  "certifications": [
-    {
-      "name": "Certification Name",
-      "issuer": "Issuing Organization",
-      "issueDate": "YYYY"
     }
   ]
 }
@@ -248,45 +230,7 @@ export function parseJsonResume(json: any): Partial<ResumeData> {
     });
   }
 
-  // 6. Projects
-  const rawProjects = json.projects;
-  if (Array.isArray(rawProjects)) {
-    res.projects = rawProjects.map((p: any, idx: number): ProjectItem => ({
-      id: p.id || `proj-import-${idx}-${Date.now()}`,
-      name: p.name || p.title || '',
-      role: p.role || '',
-      url: p.url || '',
-      githubUrl: p.githubUrl || '',
-      technologies: Array.isArray(p.technologies)
-        ? p.technologies
-        : Array.isArray(p.keywords)
-        ? p.keywords
-        : [],
-      bullets: Array.isArray(p.bullets)
-        ? p.bullets
-        : Array.isArray(p.highlights)
-        ? p.highlights
-        : [p.description].filter(Boolean),
-      startDate: p.startDate || '',
-      endDate: p.endDate || '',
-    }));
-  }
-
-  // 7. Certifications
-  const rawCerts = json.certifications || json.certificates;
-  if (Array.isArray(rawCerts)) {
-    res.certifications = rawCerts.map((c: any, idx: number): CertificationItem => ({
-      id: c.id || `cert-import-${idx}-${Date.now()}`,
-      name: c.name || c.title || '',
-      issuer: c.issuer || '',
-      issueDate: c.issueDate || c.date || '',
-      expirationDate: c.expirationDate || '',
-      credentialId: c.credentialId || '',
-      url: c.url || '',
-    }));
-  }
-
-  // 8. Awards
+  // 6. Awards
   const rawAwards = json.awards;
   if (Array.isArray(rawAwards)) {
     res.awards = rawAwards.map((a: any, idx: number): AwardItem => ({
@@ -298,17 +242,17 @@ export function parseJsonResume(json: any): Partial<ResumeData> {
     }));
   }
 
-  // 9. Custom Sections
+  // 7. Custom Sections
   if (Array.isArray(json.customSections)) {
     res.customSections = json.customSections;
   }
 
-  // 10. Settings
+  // 8. Settings
   if (json.settings && typeof json.settings === 'object') {
     res.settings = json.settings;
   }
 
-  // 11. Title & ID
+  // 9. Title & ID
   if (json.title) res.title = json.title;
   if (json.id) res.id = json.id;
 
@@ -335,8 +279,6 @@ export function buildCompleteResumeFromImport(parsed: Partial<ResumeData>): Resu
     experiences: parsed.experiences || [],
     education: parsed.education || [],
     skillCategories: parsed.skillCategories || [],
-    projects: parsed.projects || [],
-    certifications: parsed.certifications || [],
     awards: parsed.awards || [],
     customSections: parsed.customSections || [],
     sectionOrder: parsed.sectionOrder || base.sectionOrder,
@@ -344,6 +286,5 @@ export function buildCompleteResumeFromImport(parsed: Partial<ResumeData>): Resu
       ...base.settings,
       ...(parsed.settings || {}),
     },
-    targetJobDescription: parsed.targetJobDescription || '',
   };
 }

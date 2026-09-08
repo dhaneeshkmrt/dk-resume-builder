@@ -5,7 +5,7 @@ import {
   ShieldCheck,
   Target,
   Download,
-  FolderOpen,
+  FileCode,
   Layout,
   FolderArchive
 } from 'lucide-react';
@@ -104,9 +104,10 @@ export const Navbar: React.FC<Props> = ({
           <button
             onClick={onOpenImportModal}
             className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 text-xs font-semibold rounded-lg transition"
+            title="Import resume from JSON or convert your existing resume via prompt"
           >
-            <FolderOpen className="w-3.5 h-3.5" />
-            <span>Import / Samples</span>
+            <FileCode className="w-3.5 h-3.5" />
+            <span>Import JSON</span>
           </button>
 
           <button

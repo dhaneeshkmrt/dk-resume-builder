@@ -1,363 +1,147 @@
 import { ResumeData } from '@/types/resume';
 
-export const DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME: ResumeData = {
-  id: 'dhaneesh-full-stack-solution-architect',
-  title: 'dhaneesh - full stack solution architect',
+export const DEFAULT_RESUME: ResumeData = {
+  id: 'alex-morgan-full-stack',
+  title: 'Alex Morgan - Senior Full Stack Engineer',
   personalInfo: {
-    fullName: 'Dhaneesh Kumar T',
-    jobTitle: 'Full Stack Solution Architect | Principal Engineer (AI-Enabled & Distributed Systems)',
-    email: 'dhaneeshkmrt@gmail.com',
-    phone: '+91-81224-74326',
-    location: 'Hyderabad, India',
-    website: 'https://dhaneesh.dev',
-    linkedin: 'https://linkedin.com/in/dhaneeshkmrt',
-    github: 'https://github.com/dhaneeshkmrt',
-    portfolio: 'https://dhaneesh.dev',
+    fullName: 'Alex Morgan',
+    jobTitle: 'Senior Full Stack Engineer | Cloud Architecture',
+    email: 'alex.morgan@example.com',
+    phone: '+1 (555) 234-5678',
+    location: 'San Francisco, CA',
+    website: 'https://alexmorgan.dev',
+    linkedin: 'https://linkedin.com/in/alexmorgandev',
+    github: 'https://github.com/alexmorgandev',
+    portfolio: 'https://alexmorgan.dev',
   },
   summary:
-    '**Full Stack Solution Architect** and **Principal Engineer** with **12+ years of experience** architecting scalable enterprise applications across **insurance, banking, financial services, and SaaS**. Experienced in **end-to-end solution architecture**, **distributed systems**, **microservices**, **API design**, **frontend platform architecture**, **cloud-native solutions**, **security**, and **technical governance**. Strong hands-on expertise in **Angular**, **Java / Spring Boot**, **AWS**, **Kubernetes**, and **enterprise integration**, with growing specialization in **GenAI**, **RAG**, **LLM applications**, **vector search**, and **agentic AI**.',
+    '**Senior Full Stack Engineer** with **8+ years of experience** designing and operating high-throughput enterprise web applications and distributed systems. Expert in **React**, **Next.js**, **Node.js**, **TypeScript**, **PostgreSQL**, and **AWS cloud infrastructure**. Proven track record of improving web performance by 40%+, scaling services to 1M+ active users, and mentoring cross-functional engineering teams.',
   experiences: [
     {
-      id: 'exp-coforge',
-      company: 'Coforge',
-      role: 'Full Stack Architect - Enterprise Insurance Solutions',
-      location: 'Hyderabad, India',
-      startDate: '2025 Dec',
+      id: 'exp-cloudscale',
+      company: 'CloudScale Technologies',
+      role: 'Staff Full Stack Engineer',
+      location: 'San Francisco, CA (Hybrid)',
+      startDate: '2022 Jan',
       endDate: 'Present',
       current: true,
       bullets: [
-        'Architected modernization of a **15-year-old JSP-based insurance application** using **Angular**, **Spring Boot**, and **REST APIs**, defining target architecture and engineering standards.',
-        'Designed a configuration-driven **JSON dynamic form architecture** using **Angular Reactive Forms** for controls, validations, dynamic filters, and document-specific configurations.',
-        'Established an **atomic-to-composite Angular component architecture**, enabling reusable form controls and complex workflows with minimal duplication.',
-        'Designed and guided a **12+ Domain-Driven Design (DDD) microservice architecture** for Policy, Vehicle, Claims, Billing, and related insurance capabilities.',
-        'Architected **Spring Boot BFF / API Gateway services** for high-throughput request orchestration, transformation, authentication, authorization, and downstream API integration.',
-        'Implemented server-side document-level authorization using **Okta OAuth 2.0 / OIDC**, **JWT**, and **Spring Security** to prevent client-side permission bypass.',
-        'Architected the **Guidewire integration layer** using dedicated adapters, isolating external-system dependencies from domain business logic.',
-        'Designed **composite API patterns** to consolidate multiple downstream operations into simplified application-level insurance workflows.',
-        'Established **OpenAPI-driven API contracts** for consistent request/response models, validation, and integration across distributed services.',
-        'Designed **cloud-native deployment** using **AWS, S3, CloudFront, Docker, and Kubernetes** for scalable frontend delivery and backend container deployment.',
-        'Improved frontend performance through **Angular lazy loading**, **caching**, and **optimized API interactions**, reducing unnecessary resource loading and requests.',
-        'Established **Datadog observability** across frontend and backend services with end-to-end tracing, error monitoring, metrics, and alerting for production visibility.',
-        'Modernized legacy UI using **Angular Material** and **WCAG 2.1 principles**, improving accessibility, usability, and visual consistency.',
-        'Created **solution designs**, **sequence diagrams**, and **API contracts**, translating evolving business requirements into implementable technical solutions.',
-        'Provided **technical leadership** through architecture decisions, design reviews, code reviews, and reusable engineering patterns across frontend and backend teams.',
-        'Mentored engineers through architecture reviews, design discussions, and code reviews, raising engineering quality and promoting consistent implementation patterns.',
-        'Applied AI-assisted engineering tools (**GitHub Copilot**, **LLM generation**) to accelerate development, refactoring, testing, and technical documentation.'
+        'Architected high-throughput customer analytics platform handling **25,000+ requests/sec** using **Next.js**, **Node.js**, and **PostgreSQL**.',
+        'Reduced client-side bundle size by **45% (3.8 MB to 850 KB)** through dynamic code splitting, tree-shaking, and edge asset caching.',
+        'Engineered real-time notification engine using **WebSockets** and **Redis Pub/Sub**, decreasing message delivery latency from 1.2s to sub-100ms.',
+        'Established automated CI/CD pipeline using **GitHub Actions**, **Docker**, and **AWS ECS**, cutting release deployment time by **60%**.',
+        'Led architecture design reviews and mentored **6 junior and mid-level software engineers** on clean code and system scalability.'
       ]
     },
     {
-      id: 'exp-bnp',
-      company: 'BNP Paribas',
-      role: 'Senior Technical Lead (Frontend Platform) – Corporate Credit',
-      location: 'Bangalore, India',
-      startDate: '2025 May',
-      endDate: '2025 Dec',
+      id: 'exp-apex',
+      company: 'Apex Enterprise Solutions',
+      role: 'Senior Software Engineer',
+      location: 'Austin, TX',
+      startDate: '2019 Jun',
+      endDate: '2021 Dec',
       current: false,
       bullets: [
-        'Architected and maintained **MyCreditApp**, a large-scale enterprise application spanning **25+ repositories**; drove governance of a custom **Design System Library** extending **Angular Material**.',
-        'Managed internal **Nx monorepo** and oversaw publishing of shared packages to the organization\'s **private NPM registry**, mentoring developers across teams.',
-        'Extended **Angular Material** with BNP-specific design components, enabling consistent **UI/UX across 25+ repos** and accelerating feature velocity.',
-        'Created and enhanced reusable components within the design system, adding new features and driving cross-team adoption.',
-        'Led **Angular version migration**, modernizing legacy codebase and reducing long-term technical debt and maintenance risks.',
-        'Founded and led the **Angular Community of Practice (NG BNP)**, driving best practices, architecture standards, and capability building across teams.',
-        'Ensured compliance with **European Accessibility standards (WCAG 2.1 / EAA)** by embedding accessibility requirements into the design system core, reducing regulatory risk and improving usability.'
+        'Spearheaded the migration of a legacy monolithic platform into **14 domain-driven microservices** using **Node.js**, **Express**, and **RabbitMQ**.',
+        'Designed and implemented secure OAuth 2.0 / OIDC role-based authentication service serving **500k+ enterprise users**.',
+        'Optimized slow database queries and implemented **Redis multi-layer caching**, improving API response times by **65%**.',
+        'Enforced automated end-to-end testing with **Playwright** and **Jest**, elevating test coverage from 42% to **88%** across core workflows.'
       ]
     },
     {
-      id: 'exp-enact',
-      company: 'Enact Systems',
-      role: 'Engineering Manager - Consumer App',
-      location: 'Bangalore, India',
-      startDate: '2024 Apr',
-      endDate: '2025 May',
+      id: 'exp-nexar',
+      company: 'Nexar Media Systems',
+      role: 'Full Stack Developer',
+      location: 'Seattle, WA',
+      startDate: '2016 Aug',
+      endDate: '2019 May',
       current: false,
       bullets: [
-        'Led and contributed hands-on to the development of a consumer-facing **solar monitoring platform** helping homeowners optimize energy usage and reduce costs, owning team delivery and technical execution.',
-        'Architected an **AWS event-driven solar data pipeline** using **SNS/SQS**, asynchronously ingesting generation data from multiple inverter OEM APIs with varying formats and intervals.',
-        'Designed **resilient asynchronous processing** with retry, failure recovery, and reconciliation workflows, isolating OEM/API failures and enabling safe reprocessing of incomplete data.',
-        'Implemented **idempotent event processing** across **DynamoDB** and **PostgreSQL**, preventing duplicate records during retries and ensuring reliable processing of solar generation and savings calculations.',
-        'Reduced **user onboarding time by ~70% (10–15 mins → 2–5 mins)** by redesigning end-to-end onboarding flows and application architecture.',
-        'Improved application performance by **75%** by optimizing Angular architecture and reducing initial bundle size from **4.12 MB to 970 KB**, significantly improving load times and UX.',
-        'Led modernization of the frontend platform by migrating from **Angular 10 to Angular 15**, improving maintainability, security posture, and long-term scalability.',
-        'Enabled faster enterprise client onboarding by architecting **white-label and theming capabilities**, reducing customization effort and accelerating go-to-market timelines.',
-        'Standardized frontend architecture through **reusable, configurable components** and modular design, improving development velocity and reducing future maintenance cost.',
-        'Improved platform stability and predictability by implementing **NgRx-based state management** and end-to-end testing with **Playwright**, reducing production defects.',
-        'Strengthened delivery reliability by introducing **CI/CD pipelines on AWS** and enforcing architecture standards through design reviews, code reviews, and technical governance.'
-      ]
-    },
-    {
-      id: 'exp-epam',
-      company: 'EPAM Systems',
-      role: 'Senior Software Engineer (Angular) - Cloud Learning',
-      location: 'Hyderabad, India',
-      startDate: '2020 Feb',
-      endDate: '2022 Apr',
-      current: false,
-      bullets: [
-        'Designed and developed interactive web pages for **Google Cloud Learning** platform using **Angular 9**, **React**, **Redux**, **NgRx**, **NestJS**, and **TypeScript**.',
-        'Developed Material UI with **Angular Dart** components and created Dart services to fetch data from backend microservices.',
-        'Performed unit testing using **Catalyst with 100% unit test code coverage** for Google production environment.',
-        'Coordinated with Interface Design Architects to meet **accessibility standards (WCAG)** at code level.',
-        'Implemented **Google Analytics** tracking for the cloud learning platform.',
-        'Integrated **gRPC-based API** course filter functionality based on various tags like location, date, and partner criteria.'
-      ]
-    },
-    {
-      id: 'exp-hrblock',
-      company: 'H & R Block',
-      role: 'Senior Software Engineer - BlockWorks Online',
-      location: 'Trivandrum, India',
-      startDate: '2017 Dec',
-      endDate: '2020 Feb',
-      current: false,
-      bullets: [
-        'Modernized H&R Block\'s Assisted Tax Preparation platform to **BlockWorks Online**, transitioning legacy monolithic systems to a **cloud-native omnichannel** application using **Angular**, **RxJS**, and **Micro Frontends**.',
-        'Created reusable **TypeScript** components and services to consume REST APIs adhering to modular architecture.',
-        'Created desktop application using **Electron JS** and integrated with the Angular frontend platform.',
-        'Migrated application developed in **Angular 4.0 to Angular 5.0** and established automated testing with **Jasmine and Karma**.',
-        'Extensively engineered advanced CSS styling architecture, pseudo-elements, classes, and responsive layouts.'
-      ]
-    },
-    {
-      id: 'exp-flytxt',
-      company: 'Flytxt Mobile Solutions',
-      role: 'Software Engineer - NEON-dX',
-      location: 'Trivandrum, India',
-      startDate: '2017 Jul',
-      endDate: '2017 Dec',
-      current: false,
-      bullets: [
-        'Developed responsive frontend components using **Polymer JS** and **Custom Elements** for **NEON-dX**, a B2C Customer Value Management (**CVM**) marketing automation platform enabling CLTV workflows.',
-        'Identified and fixed critical UI rendering and cross-browser integration bottlenecks.'
-      ]
-    },
-    {
-      id: 'exp-finastra',
-      company: 'Finastra (D+H Financial Technologies)',
-      role: 'Support Engineer - Cavion Online Banking',
-      location: 'Trivandrum, India',
-      startDate: '2016 Jan',
-      endDate: '2017 Dec',
-      current: false,
-      bullets: [
-        'Maintained and supported **Cavion Internet Banking** digital banking solution for financial institutions, providing online banking, bill payments, and mobile banking with **Java**, **HTML/CSS**, **Bootstrap**, **JavaScript**, **PHP**, and **MySQL**.'
-      ]
-    },
-    {
-      id: 'exp-freelance',
-      company: 'Freelance Developer',
-      role: 'Web Developer',
-      location: 'Remote / India',
-      startDate: '2014 Jun',
-      endDate: '2016 Jan',
-      current: false,
-      bullets: [
-        'Delivered 100+ responsive web projects converting Photoshop designs into responsive **HTML5/CSS3** websites with **Bootstrap**, **JavaScript**, and custom **WordPress** themes and plugins.'
+        'Developed responsive client portals and reusable UI components in **React** and **TypeScript**, maintaining strict WCAG 2.1 AA accessibility standards.',
+        'Created RESTful data ingestion APIs in **Python (FastAPI)** and integrated with third-party payment gateways (Stripe, PayPal).',
+        'Decreased database deadlocks by 90% by redesigning database schema indexes and transaction boundaries.'
       ]
     }
   ],
   education: [
     {
-      id: 'edu-mca',
-      institution: 'Anna University',
-      degree: 'Master of Computer Application (MCA)',
-      fieldOfStudy: 'Computer Applications',
-      location: 'Chennai / Tamil Nadu, India',
-      startDate: '2011-07',
-      endDate: '2014-06',
-      current: false,
-    },
-    {
-      id: 'edu-bsc',
-      institution: 'Manonmaniam Sundaranar University',
-      degree: 'Bachelor of Science (B.Sc)',
+      id: 'edu-ucb',
+      institution: 'University of California, Berkeley',
+      degree: 'Bachelor of Science',
       fieldOfStudy: 'Computer Science',
-      location: 'Tirunelveli / Tamil Nadu, India',
-      startDate: '2007-07',
-      endDate: '2010-06',
+      location: 'Berkeley, CA',
+      startDate: '2012',
+      endDate: '2016',
       current: false,
+      gpa: '3.8/4.0',
+      honors: 'Dean\'s Honor List'
     }
   ],
   skillCategories: [
     {
-      id: 'skill-cat-arch',
-      categoryName: 'Architecture & Leadership',
-      skills: [
-        'Solution Architecture',
-        'Software Architecture',
-        'System Design',
-        'Distributed Systems',
-        'Domain-Driven Design (DDD)',
-        'Technical Strategy',
-        'Technical Governance',
-        'Engineering Standards',
-        'Design Patterns',
-        'Scalability',
-        'Reliability',
-        'Resilience',
-        'Performance Engineering'
-      ]
+      id: 'skills-frontend',
+      categoryName: 'Frontend Platform',
+      skills: ['TypeScript', 'JavaScript (ES6+)', 'React 19', 'Next.js', 'Tailwind CSS', 'Redux / Zustand', 'HTML5 & Modern CSS'],
+      separator: 'comma'
     },
     {
-      id: 'skill-cat-frontend',
-      categoryName: 'Frontend Architecture',
-      skills: [
-        'Angular',
-        'TypeScript',
-        'JavaScript',
-        'RxJS',
-        'NgRx',
-        'React',
-        'Next.js',
-        'Angular Material',
-        'Design Systems',
-        'Nx Monorepo',
-        'Micro Frontends',
-        'Module Federation',
-        'HTML5',
-        'CSS3',
-        'SCSS',
-        'Web Performance',
-        'WCAG 2.1',
-        'EAA'
-      ]
-    },
-    {
-      id: 'skill-cat-backend',
+      id: 'skills-backend',
       categoryName: 'Backend & APIs',
-      skills: [
-        'Java',
-        'Spring Boot',
-        'Spring Security',
-        'WebFlux',
-        'Microservices',
-        'REST APIs',
-        'API Gateway',
-        'BFF',
-        'OpenAPI',
-        'Node.js',
-        'NestJS',
-        'Express.js',
-        'FastAPI',
-        'API Integration'
-      ]
+      skills: ['Node.js', 'Express', 'Python / FastAPI', 'REST APIs', 'GraphQL', 'gRPC', 'Microservices Architecture'],
+      separator: 'comma'
     },
     {
-      id: 'skill-cat-data',
-      categoryName: 'Distributed & Data',
-      skills: [
-        'Kafka',
-        'Event-Driven Architecture',
-        'Redis',
-        'Caching',
-        'PostgreSQL',
-        'SQL',
-        'MongoDB',
-        'Vector Search',
-        'Semantic Search'
-      ]
-    },
-    {
-      id: 'skill-cat-cloud',
+      id: 'skills-cloud',
       categoryName: 'Cloud & DevOps',
-      skills: [
-        'AWS',
-        'GCP',
-        'Docker',
-        'Kubernetes',
-        'Terraform',
-        'Infrastructure as Code (IaC)',
-        'CI/CD',
-        'Git',
-        'GitHub',
-        'Observability',
-        'Datadog'
-      ]
+      skills: ['AWS (ECS, S3, RDS, Lambda)', 'Docker', 'Kubernetes', 'CI/CD (GitHub Actions)', 'Terraform', 'Datadog'],
+      separator: 'comma'
     },
     {
-      id: 'skill-cat-security',
-      categoryName: 'Security',
-      skills: [
-        'OAuth 2.0',
-        'OpenID Connect',
-        'JWT',
-        'Okta',
-        'Authentication',
-        'Authorization',
-        'Secure API Design'
-      ]
-    },
-    {
-      id: 'skill-cat-ai',
-      categoryName: 'GenAI & AI Engineering',
-      skills: [
-        'Generative AI',
-        'LLM Applications',
-        'RAG',
-        'Agentic AI',
-        'LangGraph',
-        'Vector Embeddings',
-        'LLM Integration',
-        'Document Parsing',
-        'Semantic Search',
-        'Ollama',
-        'AI-Assisted Development',
-        'Claude Code',
-        'GitHub Copilot',
-        'Gemini Code Assist'
-      ]
+      id: 'skills-db',
+      categoryName: 'Databases & Storage',
+      skills: ['PostgreSQL', 'Redis', 'MongoDB', 'DynamoDB', 'Elasticsearch'],
+      separator: 'comma'
     }
   ],
   projects: [
     {
-      id: 'proj-insurance',
-      name: 'Enterprise Insurance Modernization Platform',
-      role: 'Full Stack Solution Architect',
-      technologies: ['Angular', 'Spring Boot', 'Microservices', 'Guidewire', 'AWS', 'Kubernetes', 'Datadog'],
+      id: 'proj-offline-tasker',
+      name: 'OpenMetrics: Developer Analytics Engine',
+      role: 'Creator & Lead Maintainer',
+      url: 'https://openmetrics-demo.example.com',
+      githubUrl: 'https://github.com/alexmorgandev/openmetrics',
+      technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL'],
       bullets: [
-        'Architected end-to-end modernization of 15-year-old insurance platform with 12+ DDD microservices, dynamic JSON forms, and cloud-native deployment.'
+        'Built an open-source engineering metrics dashboard with **1,500+ GitHub stars** used by 200+ developer teams.',
+        'Designed lightweight local-storage first caching engine with instant zero-latency visual rendering.'
       ],
-      startDate: '2025 Dec',
-      endDate: 'Present'
-    },
-    {
-      id: 'proj-mycredit',
-      name: 'MyCreditApp & Enterprise Design System',
-      role: 'Senior Technical Lead (Frontend Platform)',
-      technologies: ['Angular', 'TypeScript', 'Nx Monorepo', 'Module Federation', 'Angular Material'],
-      bullets: [
-        'Architected custom enterprise design system library and managed internal Nx monorepo adopted across 25+ corporate credit repositories at BNP Paribas.'
-      ],
-      startDate: '2025 May',
-      endDate: '2025 Dec'
-    },
-    {
-      id: 'proj-solar',
-      name: 'Consumer Solar Telemetry & Monitoring Platform',
-      role: 'Engineering Manager',
-      technologies: ['Angular 15', 'NestJS', 'AWS SNS/SQS', 'DynamoDB', 'PostgreSQL', 'Playwright'],
-      bullets: [
-        'Architected event-driven AWS solar data pipeline, cut user onboarding time by ~70% (10-15m -> 2-5m), and optimized initial bundle size by 75% (4.12 MB to 970 KB).'
-      ],
-      startDate: '2024 Apr',
-      endDate: '2025 May'
+      startDate: '2023 Jan',
+      endDate: '2023 Dec'
     }
   ],
   certifications: [
     {
-      id: 'cert-guidewire',
-      name: 'Guidewire Policy Lifecycle Integration',
-      issuer: 'Guidewire',
-      issueDate: '2025',
+      id: 'cert-aws-saa',
+      name: 'AWS Certified Solutions Architect – Associate',
+      issuer: 'Amazon Web Services',
+      issueDate: '2023',
     },
     {
-      id: 'cert-wcag',
-      name: 'Accessibility Specialist (WCAG 2.1 / EAA Compliance)',
-      issuer: 'W3C / Enterprise Standards',
-      issueDate: '2024',
+      id: 'cert-k8s',
+      name: 'Certified Kubernetes Application Developer (CKAD)',
+      issuer: 'Cloud Native Computing Foundation (CNCF)',
+      issueDate: '2022',
     }
   ],
-  awards: [],
+  awards: [
+    {
+      id: 'award-hackathon',
+      title: 'First Place – Enterprise Cloud Hackathon',
+      issuer: 'Cloud Developer Summit',
+      date: '2022',
+      description: 'Awarded 1st place among 80 teams for architecting real-time anomaly detection workflow.'
+    }
+  ],
   customSections: [],
   sectionOrder: ['summary', 'experience', 'skills', 'projects', 'education', 'certifications'],
   settings: {
@@ -373,23 +157,211 @@ export const DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME: ResumeData = {
   }
 };
 
-export const DHANEESH_KUMAR_RESUME: ResumeData = DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME;
-export const SOFTWARE_ENGINEER_SAMPLE: ResumeData = DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME;
+export const BACKEND_ARCHITECT_RESUME: ResumeData = {
+  id: 'jordan-lee-backend-architect',
+  title: 'Jordan Lee - Backend & Cloud Architect',
+  personalInfo: {
+    fullName: 'Jordan Lee',
+    jobTitle: 'Principal Backend Engineer | Distributed Systems',
+    email: 'jordan.lee@example.com',
+    phone: '+1 (555) 987-6543',
+    location: 'New York, NY',
+    website: 'https://jordanlee.example.com',
+    linkedin: 'https://linkedin.com/in/jordanleedev',
+    github: 'https://github.com/jordanleedev',
+    portfolio: 'https://jordanlee.example.com',
+  },
+  summary:
+    '**Principal Backend Engineer** with **10+ years of experience** specializing in high-concurrency distributed systems, transactional databases, and resilient microservice architectures. Proven track record of scaling mission-critical platforms to **50M+ daily transactions** with 99.999% availability.',
+  experiences: [
+    {
+      id: 'exp-strata',
+      company: 'Strata Financial Cloud',
+      role: 'Principal Systems Architect',
+      location: 'New York, NY',
+      startDate: '2021 Mar',
+      endDate: 'Present',
+      current: true,
+      bullets: [
+        'Architected real-time transaction ledger processing **$2B+ in annual transaction volume** with sub-millisecond execution times.',
+        'Designed fault-tolerant event pipeline across **Kafka** and **Apache Flink**, reducing data replication lag by 80%.',
+        'Standardized infrastructure-as-code using **Terraform** and **AWS EKS**, automating multi-region disaster recovery.'
+      ]
+    },
+    {
+      id: 'exp-beacon',
+      company: 'Beacon Cloud Infrastructure',
+      role: 'Staff Software Engineer',
+      location: 'Boston, MA',
+      startDate: '2017 Jul',
+      endDate: '2021 Feb',
+      current: false,
+      bullets: [
+        'Engineered core API gateway handling **40k req/sec** using **Go** and **gRPC**, lowering CPU overhead by 35%.',
+        'Implemented distributed database sharding for **PostgreSQL**, sustaining 5x customer data growth without query degradation.'
+      ]
+    }
+  ],
+  education: [
+    {
+      id: 'edu-mit',
+      institution: 'Massachusetts Institute of Technology',
+      degree: 'Master of Science',
+      fieldOfStudy: 'Computer Science',
+      location: 'Cambridge, MA',
+      startDate: '2015',
+      endDate: '2017',
+      current: false,
+      gpa: '3.9/4.0'
+    }
+  ],
+  skillCategories: [
+    {
+      id: 'skills-backend-core',
+      categoryName: 'Core Backend',
+      skills: ['Go (Golang)', 'Java / Spring Boot', 'Python', 'gRPC & Protocol Buffers', 'RESTful Systems'],
+      separator: 'comma'
+    },
+    {
+      id: 'skills-infra',
+      categoryName: 'Cloud & Distributed Systems',
+      skills: ['AWS', 'Kubernetes', 'Apache Kafka', 'Docker', 'Terraform', 'Prometheus & Grafana'],
+      separator: 'comma'
+    },
+    {
+      id: 'skills-storage',
+      categoryName: 'Databases & Caching',
+      skills: ['PostgreSQL', 'Redis', 'Cassandra', 'Database Sharding', 'ACID Transactions'],
+      separator: 'comma'
+    }
+  ],
+  projects: [
+    {
+      id: 'proj-grpc-proxy',
+      name: 'High-Throughput gRPC Proxy Engine',
+      technologies: ['Go', 'Docker', 'Kubernetes'],
+      bullets: [
+        'Published lightweight reverse proxy benchmarking 100k+ concurrent requests with zero packet drop.'
+      ],
+      githubUrl: 'https://github.com/jordanleedev/grpc-proxy'
+    }
+  ],
+  certifications: [
+    {
+      id: 'cert-aws-pro',
+      name: 'AWS Certified Solutions Architect – Professional',
+      issuer: 'Amazon Web Services',
+      issueDate: '2023'
+    }
+  ],
+  awards: [],
+  customSections: [],
+  sectionOrder: ['summary', 'experience', 'skills', 'education', 'certifications', 'projects'],
+  settings: {
+    template: 'compact',
+    fontFamily: 'Roboto',
+    fontSize: 10,
+    lineSpacing: 'compact',
+    primaryColor: '#1e3a8a',
+    pageSize: 'A4',
+    showSectionIcons: true,
+    twoColumnLayout: false,
+    contactHeaderStyle: 'pipes',
+  }
+};
+
+export const FRONTEND_ENGINEER_RESUME: ResumeData = {
+  id: 'taylor-rivera-frontend',
+  title: 'Taylor Rivera - Staff Frontend Engineer',
+  personalInfo: {
+    fullName: 'Taylor Rivera',
+    jobTitle: 'Staff Frontend Engineer | Design Systems',
+    email: 'taylor.rivera@example.com',
+    phone: '+1 (555) 456-7890',
+    location: 'Seattle, WA',
+    website: 'https://taylorrivera.example.com',
+    linkedin: 'https://linkedin.com/in/taylorriveradev',
+    github: 'https://github.com/taylorriveradev',
+    portfolio: 'https://taylorrivera.example.com',
+  },
+  summary:
+    '**Staff Frontend Engineer** with **7+ years of experience** architecting high-scale design systems, accessible web interfaces, and modern React architectures. Champion of web performance, zero-bundle overhead patterns, and developer experience (DX).',
+  experiences: [
+    {
+      id: 'exp-pulse',
+      company: 'Pulse Design Platform',
+      role: 'Staff Frontend Engineer',
+      location: 'Seattle, WA',
+      startDate: '2022 Mar',
+      endDate: 'Present',
+      current: true,
+      bullets: [
+        'Architected comprehensive design system consumed by **40+ product teams** across web and mobile web.',
+        'Increased Core Web Vitals (LCP, CLS, INP) scores to 99% across high-traffic checkout flows.',
+        'Authored open-source headless UI library adopted by **10,000+ developers**.'
+      ]
+    }
+  ],
+  education: [
+    {
+      id: 'edu-uw',
+      institution: 'University of Washington',
+      degree: 'Bachelor of Science',
+      fieldOfStudy: 'Human Centered Design & Engineering',
+      location: 'Seattle, WA',
+      startDate: '2014',
+      endDate: '2018',
+      current: false,
+      gpa: '3.85/4.0'
+    }
+  ],
+  skillCategories: [
+    {
+      id: 'skills-fe-core',
+      categoryName: 'Frontend Core',
+      skills: ['TypeScript', 'React 19', 'Next.js', 'Tailwind CSS', 'CSS Modules', 'Web Performance Optimization'],
+      separator: 'comma'
+    },
+    {
+      id: 'skills-tooling',
+      categoryName: 'Design Systems & Testing',
+      skills: ['Storybook', 'Figma Tokens', 'Jest', 'Playwright', 'WCAG 2.1 AA Accessibility', 'Vite'],
+      separator: 'comma'
+    }
+  ],
+  projects: [],
+  certifications: [],
+  awards: [],
+  customSections: [],
+  sectionOrder: ['summary', 'experience', 'skills', 'education'],
+  settings: {
+    template: 'minimal',
+    fontFamily: 'Inter',
+    fontSize: 11,
+    lineSpacing: 'normal',
+    primaryColor: '#0f766e',
+    pageSize: 'A4',
+    showSectionIcons: false,
+    twoColumnLayout: false,
+    contactHeaderStyle: 'bullets',
+  }
+};
+
 
 export const SAMPLE_RESUMES = [
   {
-    id: 'dhaneesh-full-stack-solution-architect',
-    label: 'dhaneesh - full stack solution architect',
-    data: DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME
+    id: 'alex-morgan-full-stack',
+    label: 'Alex Morgan - Senior Full Stack Engineer',
+    data: DEFAULT_RESUME
   },
   {
-    id: 'dhaneesh-kumar',
-    label: 'Dhaneesh Kumar T (Technical Architect - 12+ Yrs)',
-    data: DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME
+    id: 'jordan-lee-backend-architect',
+    label: 'Jordan Lee - Backend & Cloud Architect',
+    data: BACKEND_ARCHITECT_RESUME
   },
   {
-    id: 'software-engineer',
-    label: 'Full Stack Architect (Spring Boot, Angular, AI/RAG)',
-    data: DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME
+    id: 'taylor-rivera-frontend',
+    label: 'Taylor Rivera - Staff Frontend Engineer',
+    data: FRONTEND_ENGINEER_RESUME
   },
 ];

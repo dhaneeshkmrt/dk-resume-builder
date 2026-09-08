@@ -69,7 +69,6 @@ Created by a developer for fellow developers, **DK Resume Builder** is designed 
 
 ### 📄 5. Multi-Format High-Fidelity Export
 - **Pixel-Perfect PDF**: Clean, print-exact vector PDF generation with zero watermark.
-- **Microsoft Word (.docx)**: Standard editable ATS-compliant document.
 - **Clean Markdown (.md)**: Developer-ready plain markdown formatted for GitHub profiles, developer documentation, or portfolio sites.
 - **JSON Resume (.json)**: Full export and import compatible with the official open-source JSON Resume standard.
 - **Plain Text (.txt)**: Clean plain text for quick copy-pasting into job application forms.
@@ -80,6 +79,10 @@ Created by a developer for fellow developers, **DK Resume Builder** is designed 
 - Customizable accent palettes including **DK Emerald**, **Sapphire Navy**, and **Teal**.
 - Configurable contact header styles: clean bullet dots, modern badges, or pipe dividers.
 
+### 🔄 7. JSON-Only Import with Built-in Conversion Prompt
+- **Direct JSON Ingestion**: Paste raw JSON or upload `.json` files directly with real-time schema validation and error feedback.
+- **Universal Resume Conversion Prompt**: Includes a 1-click prompt generator. Copy the prompt, paste it into ChatGPT, Claude, or any LLM alongside your old PDF/Word/LinkedIn resume, and get back the exact JSON schema ready to import into DK Resume Builder.
+
 ---
 
 ## 🛠️ Tech Stack
@@ -89,7 +92,7 @@ Created by a developer for fellow developers, **DK Resume Builder** is designed 
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Document Generation**: [docx](https://docx.js.org/), [jsPDF](https://github.com/parallax/jsPDF), [html2canvas](https://html2canvas.hertzen.com/)
+- **Document Generation**: [jsPDF](https://github.com/parallax/jsPDF), [html2canvas](https://html2canvas.hertzen.com/)
 - **Storage**: Native Web Storage API (`localStorage`)
 
 ---
@@ -120,6 +123,17 @@ npm run build
 npm start
 ```
 
+## 🌐 Deploy to GitHub Pages
+
+This repository includes a GitHub Actions workflow that builds and deploys the static export whenever changes are pushed to `main`.
+
+1. Push the repository to GitHub.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Push to `main` or run **Deploy to GitHub Pages** from the Actions tab.
+
+For this repository, the deployed site will be available at:
+`https://<your-username>.github.io/dk-resume-builder/`
+
 ---
 
 ## 📂 Project Structure
@@ -146,7 +160,7 @@ dk-resume-builder/
 │   ├── config/              # Feature flags
 │   ├── data/                # Action verbs database & sample resumes
 │   ├── types/               # ResumeData TypeScript interfaces
-│   └── utils/               # Storage, ATS Scorer, and PDF/DOCX/MD Exporters
+│   └── utils/               # Storage, ATS Scorer, and PDF/MD/JSON Exporters
 └── package.json
 ```
 

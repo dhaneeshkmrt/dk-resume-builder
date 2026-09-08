@@ -16,7 +16,6 @@ import {
   Clock,
   Layout
 } from 'lucide-react';
-import { DHANEESH_KUMAR_RESUME } from '@/data/sampleResumes';
 
 interface Props {
   isOpen: boolean;
@@ -103,7 +102,7 @@ export const SavedResumesModal: React.FC<Props> = ({
                 type="text"
                 value={newTitle}
                 onChange={e => setNewTitle(e.target.value)}
-                placeholder="e.g. Dhaneesh Kumar - Solutions Architect"
+                placeholder="e.g. Alex Morgan - Senior Full Stack Engineer"
                 className="flex-1 px-3 py-2 text-xs border border-emerald-300 rounded-lg bg-white outline-none focus:ring-2 focus:ring-emerald-700 text-slate-800"
               />
               <button

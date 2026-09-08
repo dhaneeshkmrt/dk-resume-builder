@@ -1,4 +1,3 @@
-import { Document, Paragraph, TextRun, HeadingLevel, Packer, AlignmentType } from 'docx';
 import { ResumeData } from '@/types/resume';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -359,76 +358,6 @@ export function exportToJsonResume(resume: ResumeData): string {
   return JSON.stringify(jsonResume, null, 2);
 }
 
-/**
- * Export to Microsoft Word (.docx)
- */
-export async function exportToDocx(resume: ResumeData): Promise<Blob> {
-  const doc = new Document({
-    sections: [
-      {
-        properties: {},
-        children: [
-          new Paragraph({
-            text: resume.personalInfo.fullName,
-            heading: HeadingLevel.TITLE,
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({
-            text: [
-              resume.personalInfo.jobTitle,
-              resume.personalInfo.email,
-              resume.personalInfo.phone,
-              resume.personalInfo.location
-            ].filter(Boolean).join(' | '),
-            alignment: AlignmentType.CENTER,
-          }),
-          new Paragraph({ text: '' }),
-          // Summary
-          ...(resume.summary ? [
-            new Paragraph({ text: 'PROFESSIONAL SUMMARY', heading: HeadingLevel.HEADING_2 }),
-            new Paragraph({ text: resume.summary }),
-            new Paragraph({ text: '' })
-          ] : []),
-          // Experience
-          new Paragraph({ text: 'WORK EXPERIENCE', heading: HeadingLevel.HEADING_2 }),
-          ...resume.experiences.flatMap(exp => [
-            new Paragraph({
-              children: [
-                new TextRun({ text: exp.role, bold: true }),
-                new TextRun({ text: ` | ${exp.company} (${exp.startDate} - ${exp.current ? 'Present' : exp.endDate})`, italics: true })
-              ]
-            }),
-            ...exp.bullets.map(b => new Paragraph({ text: b, bullet: { level: 0 } })),
-            new Paragraph({ text: '' })
-          ]),
-          // Skills
-          new Paragraph({ text: 'SKILLS', heading: HeadingLevel.HEADING_2 }),
-          ...resume.skillCategories.map(cat => (
-            new Paragraph({
-              children: [
-                new TextRun({ text: `${cat.categoryName}: `, bold: true }),
-                new TextRun({ text: cat.skills.join(cat.separator === 'pipe' ? ' | ' : ', ') })
-              ]
-            })
-          )),
-          new Paragraph({ text: '' }),
-          // Education
-          new Paragraph({ text: 'EDUCATION', heading: HeadingLevel.HEADING_2 }),
-          ...resume.education.map(edu => (
-            new Paragraph({
-              children: [
-                new TextRun({ text: `${edu.degree} in ${edu.fieldOfStudy}`, bold: true }),
-                new TextRun({ text: ` - ${edu.institution} (${edu.startDate} - ${edu.endDate})` })
-              ]
-            })
-          ))
-        ]
-      }
-    ]
-  });
-
-  return await Packer.toBlob(doc);
-}
 
 export function downloadFile(content: string | Blob, filename: string, mimeType: string): void {
   const blob = typeof content === 'string' ? new Blob([content], { type: mimeType }) : content;

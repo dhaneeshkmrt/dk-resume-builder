@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ResumeData, TemplateId, FontFamily } from '@/types/resume';
-import { DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME, DHANEESH_KUMAR_RESUME } from '@/data/sampleResumes';
+import { DEFAULT_RESUME } from '@/data/sampleResumes';
 import { calculateAtsAudit } from '@/utils/atsScorer';
 import {
   loadAllSavedResumes,
@@ -26,8 +26,8 @@ import { SavedResumesModal } from '@/components/modals/SavedResumesModal';
 import { GripVertical } from 'lucide-react';
 
 export default function ResumeBuilderPage() {
-  const [resume, setResume] = useState<ResumeData>(DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME);
-  const [savedResumes, setSavedResumes] = useState<ResumeData[]>([DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME]);
+  const [resume, setResume] = useState<ResumeData>(DEFAULT_RESUME);
+  const [savedResumes, setSavedResumes] = useState<ResumeData[]>([DEFAULT_RESUME]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [splitPercent, setSplitPercent] = useState<number>(50);
   const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -48,10 +48,10 @@ export default function ResumeBuilderPage() {
       setSavedResumes(all);
 
       const activeId = getActiveResumeId();
-      const current = (activeId && all.find(r => r.id === activeId)) || all[0] || DHANEESH_KUMAR_RESUME;
+      const current = (activeId && all.find(r => r.id === activeId)) || all[0] || DEFAULT_RESUME;
       setResume(current);
 
-      const savedSplit = localStorage.getItem('weekday_resume_builder_split_percent');
+      const savedSplit = localStorage.getItem('dk_resume_builder_split_percent') || localStorage.getItem('weekday_resume_builder_split_percent');
       if (savedSplit) {
         const val = parseFloat(savedSplit);
         if (!isNaN(val) && val >= 20 && val <= 80) {
@@ -60,7 +60,7 @@ export default function ResumeBuilderPage() {
       }
     } catch (e) {
       console.error('Failed to load saved resumes from localStorage', e);
-      setResume(DHANEESH_KUMAR_RESUME);
+      setResume(DEFAULT_RESUME);
     }
     setIsLoaded(true);
   }, []);

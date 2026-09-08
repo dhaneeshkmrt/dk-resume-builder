@@ -1,5 +1,5 @@
 import { ResumeData } from '@/types/resume';
-import { DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME, DHANEESH_KUMAR_RESUME } from '@/data/sampleResumes';
+import { DEFAULT_RESUME } from '@/data/sampleResumes';
 
 export const RESUMES_STORAGE_KEY = 'dk_saved_resumes_collection_v1';
 export const ACTIVE_RESUME_ID_KEY = 'dk_active_resume_id_v1';
@@ -22,7 +22,7 @@ export interface SavedResumeMeta {
  */
 export function loadAllSavedResumes(): ResumeData[] {
   if (typeof window === 'undefined') {
-    return [DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME];
+    return [DEFAULT_RESUME];
   }
 
   try {
@@ -85,14 +85,6 @@ export function loadAllSavedResumes(): ResumeData[] {
           saveAllResumes(parsed);
         }
 
-        const hasArchitect = parsed.some(
-          r => r.id === 'dhaneesh-full-stack-solution-architect' || r.title === 'dhaneesh - full stack solution architect'
-        );
-        if (!hasArchitect) {
-          const updated = [DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME, ...parsed];
-          saveAllResumes(updated);
-          return updated;
-        }
         return parsed;
       }
     }
@@ -102,19 +94,19 @@ export function loadAllSavedResumes(): ResumeData[] {
     if (legacyRaw) {
       const legacyParsed = JSON.parse(legacyRaw);
       if (legacyParsed && legacyParsed.personalInfo?.fullName) {
-        const initialList = [DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME, legacyParsed];
+        const initialList = [DEFAULT_RESUME, legacyParsed];
         saveAllResumes(initialList);
         return initialList;
       }
     }
 
-    // Default: initialize with DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME
-    const defaultList = [DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME];
+    // Default: initialize with DEFAULT_RESUME
+    const defaultList = [DEFAULT_RESUME];
     saveAllResumes(defaultList);
     return defaultList;
   } catch (err) {
     console.error('Failed to load saved resumes from localStorage:', err);
-    return [DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME];
+    return [DEFAULT_RESUME];
   }
 }
 
@@ -159,7 +151,7 @@ export function saveResumeToCollection(resume: ResumeData): ResumeData[] {
  */
 export function duplicateResume(sourceId: string, newTitle?: string): { list: ResumeData[]; newResume: ResumeData } {
   const all = loadAllSavedResumes();
-  const source = all.find(r => r.id === sourceId) || all[0] || DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME;
+  const source = all.find(r => r.id === sourceId) || all[0] || DEFAULT_RESUME;
 
   const timestamp = Date.now();
   const title = newTitle?.trim() || `${source.title || source.personalInfo.fullName} (Copy)`;
@@ -180,7 +172,7 @@ export function duplicateResume(sourceId: string, newTitle?: string): { list: Re
  */
 export function createNewResume(title: string, templateData?: ResumeData): { list: ResumeData[]; newResume: ResumeData } {
   const all = loadAllSavedResumes();
-  const base = templateData || DHANEESH_FULL_STACK_SOLUTION_ARCHITECT_RESUME;
+  const base = templateData || DEFAULT_RESUME;
   const timestamp = Date.now();
 
   const newResume: ResumeData = {

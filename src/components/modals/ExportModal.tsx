@@ -5,13 +5,12 @@ import { ResumeData } from '@/types/resume';
 import {
   exportToDirectPdf,
   exportToPdfPrint,
-  exportToDocx,
   exportToPlainText,
   exportToAgenticMarkdown,
   exportToJsonResume,
   downloadFile
 } from '@/utils/exporters';
-import { Download, FileText, Printer, FileCode, Check, X, File, Loader2 } from 'lucide-react';
+import { Download, FileText, Printer, FileCode, Check, X, Loader2 } from 'lucide-react';
 
 interface Props {
   isOpen: boolean;
@@ -47,10 +46,6 @@ export const ExportModal: React.FC<Props> = ({ isOpen, onClose, resume }) => {
     exportToPdfPrint();
   };
 
-  const handleDownloadDocx = async () => {
-    const blob = await exportToDocx(resume);
-    downloadFile(blob, `${fileNameSlug}_resume.docx`, 'application/vnd.openxmlformats-officedocument.wordprocessingml.document');
-  };
 
   const handleDownloadTxt = () => {
     const text = exportToPlainText(resume);
@@ -85,7 +80,7 @@ export const ExportModal: React.FC<Props> = ({ isOpen, onClose, resume }) => {
             </div>
             <div>
               <h3 className="font-bold text-neutral-900 text-base">Export & Download Resume</h3>
-              <p className="text-xs text-neutral-500">Download clean ATS-friendly PDF, Word (.docx), Markdown, or JSON</p>
+              <p className="text-xs text-neutral-500">Download clean ATS-friendly PDF, Markdown, or JSON</p>
             </div>
           </div>
           <button onClick={onClose} className="text-neutral-400 hover:text-neutral-700 p-1.5 rounded-lg transition">
@@ -145,26 +140,6 @@ export const ExportModal: React.FC<Props> = ({ isOpen, onClose, resume }) => {
             <Printer className="w-4 h-4 text-neutral-400 group-hover:text-neutral-700" />
           </button>
 
-          {/* Microsoft Word DOCX */}
-          <button
-            onClick={handleDownloadDocx}
-            className="w-full text-left p-3.5 rounded-xl border border-neutral-200 hover:border-blue-600 hover:bg-blue-50/30 transition flex items-center justify-between group shadow-sm"
-          >
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-100 text-blue-700 rounded-lg">
-                <File className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="font-bold text-xs text-neutral-900 group-hover:text-blue-800">
-                  Microsoft Word (.docx)
-                </div>
-                <div className="text-[11px] text-neutral-500">
-                  Standard editable Word document formatted for ATS
-                </div>
-              </div>
-            </div>
-            <Download className="w-4 h-4 text-neutral-400 group-hover:text-blue-700" />
-          </button>
 
           {/* Clean Markdown */}
           <div className="p-3.5 rounded-xl border border-neutral-200 bg-neutral-50/50 space-y-2">

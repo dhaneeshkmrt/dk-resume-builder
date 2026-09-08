@@ -74,10 +74,6 @@ export const FormEditor: React.FC<Props> = ({ resume, onChange, onOpenJdMatcher,
             <PersonalInfoForm
               data={resume.personalInfo}
               onChange={personalInfo => onChange({ ...resume, personalInfo })}
-              contactStyle={resume.settings.contactHeaderStyle || 'bullets'}
-              onContactStyleChange={contactHeaderStyle =>
-                onChange({ ...resume, settings: { ...resume.settings, contactHeaderStyle } })
-              }
             />
           </div>
         )}

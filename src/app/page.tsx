@@ -272,7 +272,6 @@ export default function ResumeBuilderPage() {
         selectedTemplate={resume.settings.template}
         selectedFont={resume.settings.fontFamily}
         selectedColor={resume.settings.primaryColor}
-        selectedContactStyle={resume.settings.contactHeaderStyle || 'bullets'}
         onSelectTemplate={(t: TemplateId) =>
           setResume({ ...resume, settings: { ...resume.settings, template: t } })
         }
@@ -281,9 +280,6 @@ export default function ResumeBuilderPage() {
         }
         onSelectColor={(c: string) =>
           setResume({ ...resume, settings: { ...resume.settings, primaryColor: c } })
-        }
-        onSelectContactStyle={(contactHeaderStyle) =>
-          setResume({ ...resume, settings: { ...resume.settings, contactHeaderStyle } })
         }
       />
 

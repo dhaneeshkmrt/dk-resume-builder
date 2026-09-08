@@ -1,20 +1,16 @@
 import React from 'react';
-import { PersonalInfo, ContactHeaderStyle } from '@/types/resume';
+import { PersonalInfo } from '@/types/resume';
 import { User, Mail, Phone, MapPin, Globe, Sparkles } from 'lucide-react';
 import { LinkedinIcon, GithubIcon } from '@/components/common/Icons';
 
 interface Props {
   data: PersonalInfo;
   onChange: (data: PersonalInfo) => void;
-  contactStyle?: ContactHeaderStyle;
-  onContactStyleChange?: (style: ContactHeaderStyle) => void;
 }
 
 export const PersonalInfoForm: React.FC<Props> = ({
   data,
   onChange,
-  contactStyle = 'bullets',
-  onContactStyleChange,
 }) => {
   const updateField = (field: keyof PersonalInfo, value: string) => {
     onChange({ ...data, [field]: value });
@@ -136,36 +132,6 @@ export const PersonalInfoForm: React.FC<Props> = ({
           </div>
         </div>
       </div>
-
-      {onContactStyleChange && (
-        <div className="pt-2 border-t border-neutral-200">
-          <label className="block text-xs font-semibold text-neutral-700 mb-2">
-            Contact Display Style in Resume
-          </label>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            {[
-              { id: 'bullets', label: 'Clean Dots •', desc: 'ATS Preferred' },
-              { id: 'pills', label: 'Badges [ ]', desc: 'Modern Tags' },
-              { id: 'pipes', label: 'Pipes |', desc: 'Minimal Divider' },
-              { id: 'icons', label: 'Icons ✉', desc: 'Vector Badges' },
-            ].map(s => (
-              <button
-                key={s.id}
-                type="button"
-                onClick={() => onContactStyleChange(s.id as ContactHeaderStyle)}
-                className={`px-3 py-2 text-xs font-semibold rounded-lg border text-left transition ${
-                  contactStyle === s.id
-                    ? 'border-emerald-700 bg-emerald-50 text-emerald-900 ring-1 ring-emerald-700'
-                    : 'border-neutral-200 hover:border-neutral-300 bg-white text-neutral-700'
-                }`}
-              >
-                <div>{s.label}</div>
-                <div className="text-[10px] text-neutral-400 font-normal">{s.desc}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 };

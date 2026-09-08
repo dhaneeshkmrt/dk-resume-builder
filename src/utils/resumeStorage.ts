@@ -80,6 +80,10 @@ export function loadAllSavedResumes(): ResumeData[] {
               }
             }
           });
+          if (r.settings && r.settings.template !== 'modern' && r.settings.template !== 'twocolumn') {
+            r.settings.template = 'modern';
+            modified = true;
+          }
         });
         if (modified) {
           saveAllResumes(parsed);

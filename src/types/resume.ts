@@ -1,17 +1,6 @@
 
 export type TemplateId =
   | 'modern'
-  | 'minimal'
-  | 'compact'
-  | 'executive'
-  | 'technical'
-  | 'slate'
-  | 'academic'
-  | 'graphic'
-  | 'colorful'
-  | 'classic'
-  | 'professional'
-  | 'impact'
   | 'twocolumn';
 
 export type FontFamily = 'Inter' | 'Lato' | 'Merriweather' | 'Garamond' | 'Roboto' | 'JetBrains Mono';

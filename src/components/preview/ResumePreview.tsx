@@ -3,18 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ResumeData, TemplateId } from '@/types/resume';
 import { ModernTemplate } from './templates/ModernTemplate';
-import { MinimalTemplate } from './templates/MinimalTemplate';
-import {
-  CompactTemplate,
-  ExecutiveTemplate,
-  TechnicalTemplate,
-  SlateTemplate,
-  AcademicTemplate,
-  GraphicTemplate,
-  ColorfulTemplate,
-  ClassicTemplate,
-  ProfessionalTemplate
-} from './templates/OtherTemplates';
+import { TwoColumnTemplate } from './templates/TwoColumnTemplate';
 import { ZoomIn, ZoomOut, Download, Printer, CheckCircle2, Loader2, Bold } from 'lucide-react';
 import { exportToDirectPdf, exportToPdfPrint } from '@/utils/exporters';
 import { applyContentAwarePagination } from '@/utils/pagination';
@@ -295,26 +284,8 @@ export const ResumePreview: React.FC<Props> = ({
 
   const renderTemplate = (template: TemplateId) => {
     switch (template) {
-      case 'minimal':
-        return <MinimalTemplate resume={resume} />;
-      case 'compact':
-        return <CompactTemplate resume={resume} />;
-      case 'executive':
-        return <ExecutiveTemplate resume={resume} />;
-      case 'technical':
-        return <TechnicalTemplate resume={resume} />;
-      case 'slate':
-        return <SlateTemplate resume={resume} />;
-      case 'academic':
-        return <AcademicTemplate resume={resume} />;
-      case 'graphic':
-        return <GraphicTemplate resume={resume} />;
-      case 'colorful':
-        return <ColorfulTemplate resume={resume} />;
-      case 'classic':
-        return <ClassicTemplate resume={resume} />;
-      case 'professional':
-        return <ProfessionalTemplate resume={resume} />;
+      case 'twocolumn':
+        return <TwoColumnTemplate resume={resume} />;
       case 'modern':
       default:
         return <ModernTemplate resume={resume} />;

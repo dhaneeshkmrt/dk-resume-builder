@@ -153,7 +153,6 @@ export const DEFAULT_RESUME: ResumeData = {
     pageSize: 'A4',
     showSectionIcons: true,
     twoColumnLayout: false,
-    contactHeaderStyle: 'bullets',
   }
 };
 
@@ -258,15 +257,14 @@ export const BACKEND_ARCHITECT_RESUME: ResumeData = {
   customSections: [],
   sectionOrder: ['summary', 'experience', 'skills', 'education', 'certifications', 'projects'],
   settings: {
-    template: 'compact',
+    template: 'twocolumn',
     fontFamily: 'Roboto',
     fontSize: 10,
     lineSpacing: 'compact',
     primaryColor: '#1e3a8a',
     pageSize: 'A4',
     showSectionIcons: true,
-    twoColumnLayout: false,
-    contactHeaderStyle: 'pipes',
+    twoColumnLayout: true,
   }
 };
 
@@ -335,7 +333,7 @@ export const FRONTEND_ENGINEER_RESUME: ResumeData = {
   customSections: [],
   sectionOrder: ['summary', 'experience', 'skills', 'education'],
   settings: {
-    template: 'minimal',
+    template: 'modern',
     fontFamily: 'Inter',
     fontSize: 11,
     lineSpacing: 'normal',
@@ -343,7 +341,6 @@ export const FRONTEND_ENGINEER_RESUME: ResumeData = {
     pageSize: 'A4',
     showSectionIcons: false,
     twoColumnLayout: false,
-    contactHeaderStyle: 'bullets',
   }
 };
 
